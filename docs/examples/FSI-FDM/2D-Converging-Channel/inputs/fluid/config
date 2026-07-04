@@ -1,0 +1,138 @@
+
+Fluid Properties
+{
+  density     :  1750.0
+  viscosity   :  0.1
+}
+
+
+
+Body Force
+{
+    value         :  0  0  0
+    timefunction  :  1
+}
+
+
+
+Element Properties
+{
+    type  :  p2bp1dc
+}
+
+
+
+
+
+Boundary Conditions
+{
+    inlet
+    {
+        type          : specified
+        dof           : Xvelocity
+        value         : 0.06067*(1.0-y*y/0.25)
+        timefunction  : 1
+    }
+
+    inlet
+    {
+        type          : specified
+        dof           : Yvelocity
+        value         : 0.0
+        timefunction  : 1
+    }
+
+
+    symmetry
+    {
+        type          : specified
+        dof           : Yvelocity
+        value         : 0.0
+    }
+
+    bottomedge
+    {
+        type          : wall
+    }
+
+}
+
+
+
+
+Time Functions
+{
+
+! lam(t) = p1 + p2*t + p3*sin(p4*t+p5) + p6*cos(p7*t+p8)
+!
+! id   t0    t1      p1   p2     p3    p4    p5    p6    p7    p8
+
+  1   0.0     10.0    0.5   0.0   0.0   0.0   0.0   -0.5   0.3141592   0.0
+  1  10.0   1000.0    1.0   0.0   0.0   0.0   0.0    0.0   0.0   0.0
+
+
+!   1   0.0   1000.0  -1000.0  0.0    0.0   0.0   0.0   0.0   0.0   0.0
+
+!   1    0.0     10000.0  1.0  0.0    0.0   0.0   0.0   0.0   0.0   0.0
+
+!   1    0.0      1.0  0.0  1.0    0.0   0.0   0.0   0.0   0.0   0.0
+!   1    1.0   1000.0  1.0  0.0    0.0   0.0   0.0   0.0   0.0   0.0
+
+!   2   0.0   1000.0  2.0  1.0    0.0   0.0   0.0   0.0   0.0   0.0
+
+}
+
+
+
+Solver
+{
+  schemetype          :  0
+
+
+  !timescheme         :  BDF1
+  timescheme         :  Galpha
+  !timescheme         :  STEADY
+
+  spectralRadius     :  0.0
+
+  finalTime          :  1.0
+
+  timeStep         :   0.1  0.1  0.1
+
+  maximumSteps       :  10
+
+  maximumIterations  :  10
+
+  tolerance          :  1.0e-7
+
+  debug              :  0
+  
+  outputFrequency    :  1
+}
+
+
+
+
+
+
+
+Initial Conditions
+{
+        Xvelocity       :  0.0
+        Yvelocity       :  0.0
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

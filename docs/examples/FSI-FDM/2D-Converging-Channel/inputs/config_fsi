@@ -1,0 +1,30 @@
+
+
+#FSI parameters
+
+  predictorType      :  1
+  
+  forceRelaxation    :  0.05
+
+  finalTime          :  100.0
+
+  timeStep           :  0.2
+
+  maximumSteps       :  1000
+
+  minimumIterations  :  1
+
+  maximumIterations  :  10
+
+  tolerance          :  1.0e-7
+  
+  outputFrequency    :  1
+
+#}
+
+#  debug              :  1 
+
+
+
+
+

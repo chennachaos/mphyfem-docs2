@@ -1,0 +1,100 @@
+
+
+!Files
+!{
+!  mesh : Cantilever-nelem21-P1
+!}
+
+
+
+Domains
+{
+
+  beam
+  {
+    Material   : 1
+    Element    : 1
+  }
+
+}
+
+
+
+
+
+Material
+{
+  id               : 1
+  name             : Matl_LinearElastic
+  density          : 1500.0
+  data             : 2.3e6  0.45
+}
+
+
+
+
+Element
+{
+  id            : 1
+!  type          : SolidElement3D
+!  type          : BeamElement2DEulerBernoulli
+  type          : ELEM_BEAM_2D_NODES2
+
+  data          :  0.005 1.0417e-8   0.8333  0.0  0.0  0.0
+}
+
+
+
+Body Force
+{
+    value        :  0  0  0
+    TimeFunction :  1
+}
+
+
+
+Boundary Conditions
+{
+    end1
+    {
+        type         :  fixed
+    }
+
+}
+
+
+
+
+
+Solver
+{
+
+!formulation     :    IMPLICIT
+
+!solvertype       :   arclength
+solvertype       :   newton
+
+!timescheme      :    BDF1
+timescheme      :    CHalpha
+!timescheme       :   STEADY
+
+spectralRadius   :   0.0
+
+finalTime        :   1.0
+
+timeStep         :   0.1  0.1  0.1
+
+maximumSteps      :  100
+
+maximumIterations  :  10
+
+tolerance          : 1.0e-7
+
+debug              : 0
+
+}
+
+
+
+
+

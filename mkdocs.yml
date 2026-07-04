@@ -1,0 +1,111 @@
+site_name: MphyFEM
+site_url: "https://chennachaos.github.io/mphyfem-docs/"
+repo_name: "chennachaos/mphyfem"
+repo_url: "https://github.com/chennachaos/mphyfem"
+edit_uri: "https://github.com/chennachaos/mphyfem-docs"
+site_description: "FEM solvers for multiphysics problems."
+copyright: Copyright &copy; 2020–2026 MphyFEM Group; <a href="https://github.com/chennachaos/mphyfem/blob/main/LICENSE</a>
+# strict: true
+docs_dir: "docs"
+remote_branch: "main"
+theme:
+  name: material
+  custom_dir: 'docs/theme'
+  favicon: "img/xxx.ico"
+  icon:
+    logo: material/library
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: "light blue"
+      accent: "blue"
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: "blue"
+      accent: "blue"
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: "https://github.com/chennachaos/mphyfem"
+extra_css:
+  - theme/extra.css
+markdown_extensions:
+  - codehilite
+  - footnotes
+  - admonition
+  - toc:
+      permalink: true
+  - markdown.extensions.smarty
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      repo_url_shortener: true
+      user: mphyfem
+      repo: mphyfem
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.extra
+  - pymdownx.tabbed:
+      alternate_style: true
+plugins:
+  # - mknotebooks:
+  #   execute: true
+  #   preamble: "docs/plot_to_md.py"
+  #   timeout: -1
+  #- git-revision-date
+  - search
+  #- mkdocs-jupyter:
+  #    ignore_h1_titles: True
+  #    include_source: True
+  #- include-markdown
+extra_javascript:
+  - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"
+  - js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+nav:
+  - General:
+    - Home: index.md
+    - License: LICENSE.md
+  - Solid Mechanics:
+    - Formulation: examples/SolidMechanics/formulation.md
+    - Example 1 - 2D Cook's membrane - Linear Elastic: examples/SolidMechanics/2D-Cooksmembrane-LinearElastic/Cooksmembrane-2D-LinearElastic.md
+    - Example 2 - 2D Cook's membrane - NeoHookean: examples/SolidMechanics/2D-Cooksmembrane-NeoHookean/Cooksmembrane-2D-NeoHookean.md
+    - Example 3 - 2D Cook's membrane - NeoHookean incompressible: examples/SolidMechanics/2D-Cooksmembrane-NeoHookean-Incr/Cooksmembrane-2D-NeoHookean-Incr.md
+    - Example 4 - 3D Block NeoHookean: examples/SolidMechanics/3D-Block-NeoHookean/Block-3D-NeoHookean.md
+  - Incompressible Flows:
+    - Formulation: examples/CFD/formulation.md
+    - Example 1 - 2D LDC: examples/CFD/2D-LDC/LDC-2D.md
+    - Example 2 - 2D Turek circle (CFD1): examples/CFD/2D-Turek-Circle-CFD1/Turek-Circle-2D-CFD1.md
+    - Example 3 - 2D Turek circle (CFD3): examples/CFD/2D-Turek-Circle-CFD3/Turek-Circle-2D-CFD3.md
+    - Example 4 - 3D Turek circular cylinder: examples/CFD/3D-Turek-circularcylinder/3D-Turek-circularcylinder.md
+  - FSI with FDM:
+    - Formulation: examples/FSI-FDM/formulation.md
+    - Input format: examples/FSI-FDM/input-format.md
+    - Example 1 - 2D Converging channel: examples/FSI-FDM/2D-Converging-Channel/Converging-Channel.md
+
